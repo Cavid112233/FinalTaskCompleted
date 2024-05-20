@@ -1,0 +1,21 @@
+﻿@using FinalExam.Core.Models
+@model Project
+
+<div class="container">
+    <div class="row">
+        <div col-12>
+            <form asp-action="DeletePost" method="post">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/uploads/projects/@Model.ImageUrl" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.Title</h5>
+                        <p class="card-text">@Model.Description</p>
+                        <a asp-action="index" asp-controller="project" class="btn btn-outline-info">Go Back</a>
+                        <input asp-for="@Model.Id" hidden value="@Model.Id" />
+                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
